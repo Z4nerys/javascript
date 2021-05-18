@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --colortext: rgb(194, 183, 255);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    background: url("https://www.xtrafondos.com/wallpapers/rick-and-morty-en-nave-4518.jpg");
+    background-size: 136rem 65.7rem;
+    background-repeat: no-repeat;
+    color: white;
+}
+.contenedor {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.titulo {
+    height: 5rem;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+h1{
+    line-height: 5rem;
+    color: var(--colortext);
+}
+
+.main-container{
+    margin: 0 auto;
+    margin-top: .8rem;
+    height: 80vh;
+    width: 18vw;
+}
+
+.conteiner{
+    margin-bottom: .8rem;
+    font-size: 1.6rem; 
+}
+
+.conteiner-input{
+    outline: none;
+    background-color:rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    text-align: center;
+    width: 20rem;
+    
+}
+
+label{
+    color: rgb(215, 207, 224);
+    font-size: 1.8rem;
+}
+
+.buscar {
+    outline: none;
+    width: 20rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+#seg3 {
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+    margin-left: 0;
+    margin-bottom: .5rem;
+}
+
+#stop {
+    margin-right: 0;
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+}
+
+#previus {
+    margin-right: 0;
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+}
+
+#next {
+    margin-right: 0;
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+span{
+    color: var(--colortext);
+    display: inline-block;
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+#name {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#status {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+
+#species{
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#type {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#gender {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#origin {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    
+}
+
+img{
+    border-radius: 50%;
+    height: 20rem;
+}
+

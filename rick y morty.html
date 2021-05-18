@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick y morty</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+
+    <rick-morty id = "1"></rick-morty>
+    <script> 
+     const t = document.createElement('template');
+        t.innerHTML = `
+        <div class = "contenedor">
+            <div class="titulo">
+                <h1>Personajes de rick y morty</h1>
+            </div>
+            <div class="main-container">
+                <div class="conteiner">
+                    <label>Buscar por ID</label><br>
+                    <input class="conteiner-input" value = 2 placeholder = "ID personaje"></input>
+                </div>
+                <button class="buscar">buscar</button>
+                <br>
+                <span>Pasar personajes?</span>
+                <button id="seg3">Iniciar 3S</button>
+                <button id="stop">Detener 3S</button><br>
+                <button id="previus">anterior</button>
+                <button id="next">siguiente</button>
+                <div id="alert"></div>
+                <span>Descripcion</span>
+                <div id="name"></div><br/>
+                <div id="status"></div><br/>
+                <div id="species"></div><br/>
+                <div id="type"></div><br/>
+                <div id="gender"></div><br/>
+                <div id="origin"></div><br/>
+                <img id='rick' src=''>
+            </div>
+        </div>
+
+        <style>
+            *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --colortext: rgb(194, 183, 255);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    background: url("https://www.xtrafondos.com/wallpapers/rick-and-morty-en-nave-4518.jpg");
+    background-size: 136rem 65.7rem;
+    background-repeat: no-repeat;
+    color: white;
+}
+.contenedor {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.titulo {
+    height: 5rem;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+h1{
+    line-height: 5rem;
+    color: var(--colortext);
+}
+
+.main-container{
+    margin: 0 auto;
+    margin-top: .8rem;
+    height: 80vh;
+    width: 18vw;
+}
+
+.conteiner{
+    margin-bottom: .8rem;
+    font-size: 1.6rem; 
+}
+
+.conteiner-input{
+    outline: none;
+    background-color:rgba(255, 255, 255, 0.7);
+    border-radius: 1rem;
+    text-align: center;
+    width: 20rem;
+    
+}
+
+label{
+    color: rgb(215, 207, 224);
+    font-size: 1.8rem;
+}
+
+.buscar {
+    outline: none;
+    width: 20rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+#seg3 {
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+    margin-left: 0;
+    margin-bottom: .5rem;
+}
+
+#stop {
+    margin-right: 0;
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+}
+
+#previus {
+    margin-right: 0;
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+}
+
+#next {
+    margin-right: 0;
+    outline: none;
+    width: 9.7rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+span{
+    color: var(--colortext);
+    display: inline-block;
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+}
+
+#name {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#status {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+
+#species{
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#type {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#gender {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    margin-bottom: -14px;
+}
+
+#origin {
+    color: var(--colortext);
+    width: 20rem;
+    margin: 0 auto;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 1rem;
+    
+}
+
+img{
+    border-radius: 50%;
+    height: 20rem;
+}
+ 
+        </style>
+            `;
+            
+
+            
+            class rickAndMorty extends HTMLElement {
+                constructor(){
+                    super();
+                    this._shadowRoot = this.attachShadow({'mode': 'open'});
+                    this._shadowRoot.appendChild(t.content.cloneNode(true));
+                }
+                
+            
+
+            connectedCallback(){
+                this.name = this._shadowRoot.querySelector('#name');
+                this.status = this._shadowRoot.querySelector('#status');
+                this.species = this._shadowRoot.querySelector('#species');
+                this.type = this._shadowRoot.querySelector('#type');
+                this.gender = this._shadowRoot.querySelector('#gender');
+                this.origin = this._shadowRoot.querySelector('#origin');
+                this.imagen = this._shadowRoot.querySelector('#rick');
+                this.input = this._shadowRoot.querySelector('input');
+                this.b = this._shadowRoot.querySelector('button');
+                this.alerta = this._shadowRoot.querySelector('#alert');
+                this.previus = this._shadowRoot.querySelector('#previus');
+                this.next = this._shadowRoot.querySelector('#next');
+                this.seg3 = this._shadowRoot.querySelector('#seg3');
+                this.stop = this._shadowRoot.querySelector('#stop');
+                
+                
+
+                fetch('https://rickandmortyapi.com/api/character/' + this.input.value + '/')
+                    .then(resp => resp.json())
+                    .then(data =>{
+                        this.getAttribute('id');
+                        this.name.innerHTML = 'nombre: ' + data.name;
+                        this.status.innerHTML = 'status: ' + data.status;
+                        this.species.innerHTML = 'species: ' + data.species;
+                        this.type.innerHTML = 'type: ' + data.type;
+                        this.gender.innerHTML = 'gender: ' + data.gender;
+                        this.origin.innerHTML = 'origin: ' + data.origin.name;
+                        this.imagen.src = data.image;
+                        
+                    })
+
+                
+                var tiempo;
+                var pasar = true;
+                //pasar imagen cada 3 segundos apenas se cargue la pagina
+                tiempo = setInterval(() =>{ 
+                    console.log("interval")
+                    this.alerta.innerHTML = "";
+                    let n = Math.floor(Math.random() * (671 - 1 + 1)) + 1;
+                    this.input.value = n;
+                    fetch('https://rickandmortyapi.com/api/character/' + this.input.value + '/')
+                    .then(resp => resp.json())
+                    .then(data =>{
+                        this.name.innerHTML = 'nombre: ' + data.name;
+                        this.status.innerHTML = 'status: ' + data.status;
+                        this.species.innerHTML = 'species: ' + data.species;
+                        this.type.innerHTML = 'type: ' + data.type;
+                        this.gender.innerHTML = 'gender: ' + data.gender;
+                        this.origin.innerHTML = 'origin: ' + data.origin.name;
+                        this.imagen.src = data.image;
+                        this.id = this.input.value;
+                        })
+                    },3000)
+
+
+                
+                //=================pasar la imagen cada 3 segundos con el boton=================
+                this.seg3.addEventListener('click', () => {
+                    if(pasar){
+                        this.alerta.innerHTML = "Funcion ya activada";
+                    }else{
+                        pasar = true;         
+                        tiempo = setInterval(() =>{
+                            if(this.input.value == 671){
+                                this.alerta.innerHTML = "ya no se puede avanzar mas";
+                                clearInterval(tiempo);
+                            }else{
+                                this.getAttribute('id');
+                                console.log("interval")
+                                this.alerta.innerHTML = "";    
+                                let n = Math.floor(Math.random() * (671 - 1 + 1)) + 1;
+                                this.input.value = n;
+                                fetch('https://rickandmortyapi.com/api/character/' + this.input.value + '/')
+                                .then(resp => resp.json())
+                                .then(data =>{
+                                    this.name.innerHTML = 'nombre: ' + data.name;
+                                    this.status.innerHTML = 'status: ' + data.status;
+                                    this.species.innerHTML = 'species: ' + data.species;
+                                    this.type.innerHTML = 'type: ' + data.type;
+                                    this.gender.innerHTML = 'gender: ' + data.gender;
+                                    this.origin.innerHTML = 'origin: ' + data.origin.name;
+                                    this.imagen.src = data.image;
+                                    this.id = this.input.value;
+                                    })
+                                }},3000)
+                            }
+                    })
+
+                //detener el paso de imagenes
+                this.stop.addEventListener('click', () => {
+                    pasar = false;
+                    clearInterval(tiempo)
+                    console.log("detuviste el paso de imagenes")
+                })
+
+
+
+                //=================boton de previus=================
+                this.previus.addEventListener('click', () => {  
+                    if(this.input.value <= 1 || this.input.value >= 671){
+                        this.alerta.innerHTML = "ya no se puede seguir retrocediendo";
+                    }else{
+                        this.input.value = this.input.value - 1;
+                        this.alerta.innerHTML = "";
+                        fetch('https://rickandmortyapi.com/api/character/' + this.input.value + '/')
+                        .then(resp => resp.json())
+                        .then(data =>{
+                            this.getAttribute('id');
+                            this.name.innerHTML = 'nombre: ' + data.name;
+                            this.status.innerHTML = 'status: ' + data.status;
+                            this.species.innerHTML = 'species: ' + data.species;
+                            this.type.innerHTML = 'type: ' + data.type;
+                            this.gender.innerHTML = 'gender: ' + data.gender;
+                            this.origin.innerHTML = 'origin: ' + data.origin.name;
+                            this.imagen.src = data.image;
+                            this.id = this.input.value;
+                        })
+                    }
+                })
+
+                //=================boton de siguiente=================
+                this.next.addEventListener('click', () => {
+                    if(this.input.value >= 671 || this.input.value <= 0){
+                        this.alerta.innerHTML = "ya no se puede avanzar mas";
+                    }else{
+                        this.alerta.innerHTML = "";    
+                        let n = parseInt(this.input.value)
+                        n =  n + 1;
+                        this.input.value = n;
+                        fetch('https://rickandmortyapi.com/api/character/' + n + '/')
+                        .then(resp => resp.json())
+                        .then(data =>{
+                            this.getAttribute('id');
+                            this.name.innerHTML = 'nombre: ' + data.name;
+                            this.status.innerHTML = 'status: ' + data.status;
+                            this.species.innerHTML = 'species: ' + data.species;
+                            this.type.innerHTML = 'type: ' + data.type;
+                            this.gender.innerHTML = 'gender: ' + data.gender;
+                            this.origin.innerHTML = 'origin: ' + data.origin.name;
+                            this.imagen.src = data.image;
+                            this.id = this.input.value;
+                        })
+                    } 
+                })
+
+                //===========boton de buscar===========
+                this.b.addEventListener('click', () =>{
+                    if(this.input.value > 0 && this.input.value <672){
+                        this.alerta.innerHTML = "";
+                        fetch('https://rickandmortyapi.com/api/character/' + this.input.value + '/')
+                        .then(resp => resp.json())
+                        .then(data =>{
+                            this.getAttribute('id');
+                            this.name.innerHTML = 'nombre: ' + data.name;
+                            this.status.innerHTML = 'status: ' + data.status;
+                            this.species.innerHTML = 'species: ' + data.species;
+                            this.type.innerHTML = 'type: ' + data.type;
+                            this.gender.innerHTML = 'gender: ' + data.gender;
+                            this.origin.innerHTML = 'origin: ' + data.origin.name;
+                            this.imagen.src = data.image;
+                            this.id = this.input.value;
+                            })
+                        }else{
+                            this.alerta.innerHTML = "No existe un personaje con ese ID"
+                        }
+                    })                    
+            }
+
+            static get observedAttributes() {
+                return ['id','name']
+            }
+
+            attributeChangedCallback(name, oldValue, newValue) {
+
+                console.log(name + " " + oldValue + " " + newValue);
+
+                //toda la logica que quiero para las modificaciones de los atributos 
+
+                fetch('https://rickandmortyapi.com/api/character/' + this.getAttribute('id')  + '/')
+                    .then(resp => resp.json())
+                    .then(data => {
+                        this.input.value = this.getAttribute('id');
+                        this.name.innerHTML = 'nombre: ' + data.name;
+                        this.status.innerHTML = 'status: ' + data.status;
+                        this.species.innerHTML = 'species: ' + data.species;
+                        this.type.innerHTML = 'type: ' + data.type;
+                        this.gender.innerHTML = 'gender: ' + data.gender;
+                        this.origin.innerHTML = 'origin: ' + data.origin.name;
+                        this.imagen.src = data.image;
+                        })
+                }
+
+            
+        }
+                
+            window.customElements.define('rick-morty', rickAndMorty)
+
+    </script>
+</body>
+</html>
